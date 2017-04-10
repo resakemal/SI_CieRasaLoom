@@ -8,9 +8,7 @@ class Transaksi extends Model
 {
     protected $table = 'transaksi';
 
-    public $primarykey = transaksi_id;
-
-    const CREATED_AT = 'waktu_transaksi';
+    public $primaryKey = 'transaksi_id';
 
     public function setUpdatedAt($value)
 	{

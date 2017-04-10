@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/addpesanan', 'PesananController@create');
+Route::post('/addpesanan/submit', 'PesananController@add');
+
+Route::get('/daftarpesanan', 'PesananController@daftar');
+
+Route::get('/editstatus', 'PesananController@status');
+Route::post('/editstatus/submit', 'PesananController@edit');

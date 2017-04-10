@@ -8,7 +8,7 @@ class JumlahMakanan extends Model
 {
     protected $table = 'jumlah_makanan';
 
-    public $primarykey = transaksi_id;
+    public $primaryKey = 'transaksi_id';
 
     public $timestamps = false;
 

@@ -8,7 +8,7 @@ class Pemasok extends Model
 {
     protected $table = 'pemasok';
 
-    public $primarykey = pemasok_id;
+    public $primaryKey = 'pemasok_id';
 
     public $timestamps = false;
 

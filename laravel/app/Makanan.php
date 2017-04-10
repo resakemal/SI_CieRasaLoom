@@ -8,7 +8,7 @@ class Makanan extends Model
 {
     protected $table = 'makanan';
 
-    public $primarykey = makanan_id;
+    public $primaryKey = 'makanan_id';
 
     public $timestamps = false;
 }

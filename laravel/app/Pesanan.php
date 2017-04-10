@@ -8,9 +8,7 @@ class Pesanan extends Model
 {
     protected $table = 'pesanan';
 
-    public $primarykey = pesanan_id;
-
-    const CREATED_AT = 'waktu_pesanan';
+    public $primaryKey = 'pesanan_id';
 
     public function setUpdatedAt($value)
 	{

@@ -8,7 +8,7 @@ class Barang extends Model
 {
     protected $table = 'barang';
 
-    public $primarykey = nama_barang;
+    public $primaryKey = 'nama_barang';
 
     public $timestamps = false;
 
