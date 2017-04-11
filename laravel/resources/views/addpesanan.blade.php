@@ -1,6 +1,6 @@
 <html>
     <body>
-        {!! Form::open(['url' => 'addpesanan/submit']) !!}
+        {!! Form::open(['url' => '/addpesanan/submit']) !!}
 
         {!! Form::label('pemasok_id', 'Nama Pemasok') !!}
         {!! Form::select('pemasok_id', $inputs) !!}
