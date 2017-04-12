@@ -4,9 +4,11 @@ namespace CieRasaLoom\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use CieRasaLoom\User;
 use CieRasaLoom\Pemasok;
 use CieRasaLoom\Pesanan;
+use CieRasaLoom\Barang;
 
 class PesananController extends Controller
 {
@@ -24,28 +26,32 @@ class PesananController extends Controller
     public function add(Request $request){
     	$pesanan = new Pesanan;
 
-	    $pesanan->pemasok_id = '2';
+	    $pesanan->pemasok_id = $request->pemasok_id;
 	    $pesanan->status = '1';
 	    $pesanan->save();
 
-        $request->session()->flash('alert-success', 'Pesanan was successful added!');
+        $barang = new Barang;
+
+        $barang->pesanan_id = Pesanan::latest()->first()->pesanan_id;
+        $barang->nama_barang = $request->nama_barang;
+        $barang->jumlah_barang = $request->jum_barang;
+        $barang->save();
 
 	    return redirect()->action('PesananController@daftar');
     }
 
-    public function status(){
+    public function status($pesanan_id){
         $userid = Auth::id();
-        $input = Pesanan::where('pesanan_id',$userid)->first();
-        $selected = Pesanan::where('pesanan_id',$userid)->first()->status;
+        $input = Pesanan::where('pesanan_id',$pesanan_id)->first();
+        $selected = $input->status;
         return view('editstatus', compact('input','selected'));
     }
 
-    public function edit(Request $request){
-        $userid = Auth::id();
-        $pesanan = Pesanan::where('pesanan_id',$userid)->first();
-        $pesanan->status = $request->status;
-
+    public function edit(){
+        $id = Input::get('pesanan_id');
+        $pesanan = Pesanan::where('pesanan_id',$id)->first();
+        $pesanan->status = Input::get('status');
         $pesanan->save();
-        return view('home');
+        return $this->daftar();
     }
 }

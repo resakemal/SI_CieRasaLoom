@@ -20,10 +20,10 @@ class Pesanan extends Model
 	}
 
 	public function pemasok() {
-		return $this->belongsTo('App\Pemasok');
+		return $this->belongsTo('CieRasaLoom\Pemasok');
 	}
 
 	public function barang() {
-		return $this->hasMany('App\Barang');
+		return $this->hasMany('CieRasaLoom\Barang');
 	}
 }

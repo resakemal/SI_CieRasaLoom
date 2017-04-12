@@ -29,5 +29,5 @@ Route::post('/addpesanan/submit', 'PesananController@add');
 
 Route::get('/daftarpesanan', 'PesananController@daftar');
 
-Route::get('/editstatus', 'PesananController@status');
+Route::get('/editstatus{id}', 'PesananController@status');
 Route::post('/editstatus/submit', 'PesananController@edit');
