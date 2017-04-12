@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}Ciee Loom</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -33,10 +33,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
+                    
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {!! Html::image('img/icon3.png','logo', array('width' => '50%', 'height' => '100%')) !!}                     
+                    </a>
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <!--{{ config('app.name', 'Laravel') }}-->
+                        Website Operational Cie Loom                        
                     </a>
                 </div>
 
