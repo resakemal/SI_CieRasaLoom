@@ -12,18 +12,15 @@ class TransaksiController extends Controller
     public function addtransaksi(Request $request){
     	$transaksi = new Transaksi;
 
-	    $transaksi->total_harga = 0;
+	    $transaksi->total_harga = $request->total_harga;
 	    $transaksi->save();
 
-	    $jumlah = new JumlahMakanan;
-	    $id = Transaksi::latest()->first()->transaksi_id;
-	    $jumlah->transaksi_id = $id;
-	    $jumlah->makanan_id = $request->makanan_id;
-	    $jumlah->jumlah_makanan = $request->jumlah;
-
-	    $jumlah->save();
-
 	    return view('addtransaksi');
+    }
+
+    public function addItem(){
+        $makanan = Makanan::where('makanan_id',Input::get('id'))->first();
+        return json_encode($makanan);
     }
 
     public function addmakanan(Request $request) {
