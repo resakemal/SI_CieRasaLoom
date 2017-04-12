@@ -70,6 +70,11 @@
                 <div class="top-right links">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Beranda</a>
+                        <a href="{{ url('/addpesanan') }}">Pemesanan Bahan Baku</a>
+                        <a href="{{ url('/daftarpesanan') }}">Daftar Pesanan Bahan Baku</a>
+                        <a href="{{ url('/addtransaksi') }}">Kelola Transaksi</a>
+                        <a href="{{ url('/daftartransaksi') }}">Daftar Transaksi</a>
+                        <a href="{{ url('/addmakanan') }}">Tambah Menu</a>
                     @else
                         <a href="{{ url('/login') }}">Masuk</a>
                         <a href="{{ url('/register') }}">Daftar</a>

@@ -14,7 +14,7 @@
                         {!! Form::label('pemasok_id', 'Nama Pemasok: ') !!}
                     </div>
                     
-                    <div style="display:inline;padding-left: 1.8em">
+                    <div style="display:inline;padding-left: 1.6em">
                         {!! Form::select('pemasok_id', $inputs) !!}
                     </div>
 

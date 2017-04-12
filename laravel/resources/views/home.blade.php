@@ -12,7 +12,9 @@
                     <ul>
                         <li><a href="{{ url('/addpesanan') }}">Pemesanan Bahan Baku</a><br></li>
                         <li><a href="{{ url('/daftarpesanan') }}">Daftar Pesanan Bahan Baku</a><br></li>
-                        
+                        <li><a href="{{ url('/addtransaksi') }}">Kelola Transaksi</a><br></li>
+                        <li><a href="{{ url('/daftartransaksi') }}">Daftar Transaksi</a><br></li>
+                        <li><a href="{{ url('/addmakanan') }}">Tambah Menu</a><br></li>
                     </ul>
                     
                 </div>
