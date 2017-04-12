@@ -27,6 +27,8 @@ Route::get('/addmakanan', function () {
 
 Route::post('/addmakanan/submit', 'TransaksiController@addmakanan');
 
+Route::post('/addmakanan/update', 'TransaksiController@addItem');
+
 Route::get('/selectdate', function () {
     return View::make('selectdate');
 });
