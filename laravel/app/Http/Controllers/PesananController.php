@@ -18,8 +18,12 @@ class PesananController extends Controller
     }
 
     public function daftar(){
-        $userid = Auth::id();
-        $inputs = Pesanan::where('pemasok_id',$userid)->get();
+        $userid = Auth::user();
+        if ($userid->type === 1) {
+            $inputs = Pesanan::all();
+        } else {
+            $inputs = Pesanan::where('pemasok_id',Auth::id())->get();
+        }
         return view('daftarpesanan', compact('inputs',$inputs));
     }
 

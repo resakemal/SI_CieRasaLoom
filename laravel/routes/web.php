@@ -15,9 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
-    return View::make('index');
+Route::get('/addtransaksi', function () {
+    return View::make('addtransaksi');
 });
+
+Route::post('/addtransaksi/submit', 'TransaksiController@addtransaksi');
+
+Route::get('/addmakanan', function () {
+    return View::make('addmakanan');
+});
+
+Route::post('/addmakanan/submit', 'TransaksiController@addmakanan');
+
+Route::get('/selectdate', function () {
+    return View::make('selectdate');
+});
+
+Route::post('/daftartransaksi', 'TransaksiController@daftar');
 
 Auth::routes();
 
