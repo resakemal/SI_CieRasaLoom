@@ -25,6 +25,24 @@ button {
   border: 0;
   padding: 0;
   background-color: transparent;
+  width: 150px;
+}
+
+table, td, th, tr {
+    border: 1px solid black;
+}
+
+thead {
+  color: red;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 50px;
 }
 
 /* Container */
@@ -209,3 +227,4 @@ input:valid + .label {
 .center {
   text-align: center;
 }
+
